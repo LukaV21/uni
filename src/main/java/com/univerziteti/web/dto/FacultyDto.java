@@ -1,11 +1,16 @@
 package com.univerziteti.web.dto;
 
+import com.univerziteti.model.FieldOfStudy;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 @Getter@Setter@NoArgsConstructor
 public class FacultyDto {
@@ -19,5 +24,6 @@ public class FacultyDto {
     private String shortDescription;
     @NotBlank
     private String detailedDescription;
+    private List<FieldOfStudyDto> fieldOfStudies = new ArrayList<>();
 
 }

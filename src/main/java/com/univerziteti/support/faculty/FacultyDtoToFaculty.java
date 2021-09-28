@@ -1,16 +1,24 @@
 package com.univerziteti.support.faculty;
 
 import com.univerziteti.model.Faculty;
+import com.univerziteti.model.FieldOfStudy;
 import com.univerziteti.service.FacultyService;
+import com.univerziteti.service.FieldOfStudyService;
 import com.univerziteti.web.dto.FacultyDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 @Component
 public class FacultyDtoToFaculty implements Converter<FacultyDto, Faculty > {
     @Autowired
     private FacultyService facultyService;
+    @Autowired
+    private FieldOfStudyService fieldOfStudyService;
 
 
     @Override
@@ -28,6 +36,8 @@ public class FacultyDtoToFaculty implements Converter<FacultyDto, Faculty > {
         faculty.setImage(source.getImage());
         faculty.setShortDescription(source.getShortDescription());
         faculty.setDetailedDescription(source.getDetailedDescription());
+
+
 
         return faculty;
     }

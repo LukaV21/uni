@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Getter@Setter@NoArgsConstructor
@@ -21,5 +24,7 @@ public class Faculty {
     private String shortDescription;
     @Column
     private String detailedDescription;
+    @OneToMany(mappedBy = "faculty", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<FieldOfStudy> fieldOfStudies = new ArrayList<>();
 
 }
