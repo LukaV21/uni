@@ -29,11 +29,9 @@ public class FieldOfStudyToFieldOfStudyDto implements Converter<FieldOfStudy, Fi
         dto.setDetailedDescription(source.getDetailedDescription());
         dto.setTitle(source.getTitle());
         dto.setJobs(source.getJobs());
-        if(!source.getSubjects().isEmpty()) {
             List<Subject> subjects = new ArrayList<>(source.getSubjects());
             dto.setSubjects(new HashSet<>(toSubjectDto.convert(subjects)));
-            return dto;
-        }
+
         return dto;
     }
 

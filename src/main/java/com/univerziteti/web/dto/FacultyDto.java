@@ -1,6 +1,5 @@
 package com.univerziteti.web.dto;
 
-import com.univerziteti.model.FieldOfStudy;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

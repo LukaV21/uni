@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter@Setter@NoArgsConstructor
@@ -27,9 +28,7 @@ public class Subject {
     @ManyToOne
     @JoinColumn(name = "optional_group_id")
     private OptionalGroup optionalGroup;
-    @ManyToMany
-    @JoinTable(name = "subject_fieldOfStudy", joinColumns = @JoinColumn (name = "subject_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "fieldOfStudy_id", referencedColumnName = "id"))
-    private List<FieldOfStudy> fieldOfStudies;
+    @ManyToMany(mappedBy = "subjects",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Set<FieldOfStudy> fieldOfStudies;
 
 }

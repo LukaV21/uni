@@ -6,7 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -33,7 +33,9 @@ public class FieldOfStudy {
     @ManyToOne
     @JoinColumn(name = "faculty_id")
     private Faculty faculty;
-    @ManyToMany(mappedBy = "fieldOfStudies",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(name = "fieldOfStudy_subject", joinColumns = @JoinColumn(name = "fieldOfStudy_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id", referencedColumnName = "id"))
     private Set<Subject> subjects = new HashSet<>();
 
 }

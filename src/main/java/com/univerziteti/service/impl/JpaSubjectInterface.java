@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,6 +29,11 @@ public class JpaSubjectInterface implements SubjectService {
     @Override
     public Subject save(Subject s) {
         return subjectRepository.save(s);
+    }
+
+    @Override
+    public List<Subject> find(List<Long> ids) {
+        return subjectRepository.findByIdIn(ids);
     }
 
 }
