@@ -1,7 +1,7 @@
 package com.univerziteti.service;
 
 import com.univerziteti.model.User;
-import com.univerziteti.web.dto.UserPasswordChangeDto;
+import com.univerziteti.web.dto.user.UserPasswordChangeDto;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

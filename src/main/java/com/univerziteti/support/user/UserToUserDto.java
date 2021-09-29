@@ -1,7 +1,7 @@
 package com.univerziteti.support.user;
 
 import com.univerziteti.model.User;
-import com.univerziteti.web.dto.UserDto;
+import com.univerziteti.web.dto.user.UserDto;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.univerziteti.web.dto;
+package com.univerziteti.web.dto.user;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

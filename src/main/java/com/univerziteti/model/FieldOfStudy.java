@@ -7,7 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter@Setter@NoArgsConstructor
@@ -31,5 +33,7 @@ public class FieldOfStudy {
     @ManyToOne
     @JoinColumn(name = "faculty_id")
     private Faculty faculty;
+    @ManyToMany(mappedBy = "fieldOfStudies",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Set<Subject> subjects = new HashSet<>();
 
 }

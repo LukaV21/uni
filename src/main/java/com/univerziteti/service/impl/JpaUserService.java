@@ -4,7 +4,7 @@ import com.univerziteti.model.User;
 import com.univerziteti.repository.UserRepository;
 import com.univerziteti.service.UserService;
 import com.univerziteti.utils.UserRole;
-import com.univerziteti.web.dto.UserPasswordChangeDto;
+import com.univerziteti.web.dto.user.UserPasswordChangeDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
